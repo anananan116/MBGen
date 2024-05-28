@@ -1,5 +1,16 @@
 # MBGen
-Official implementation of MBGen
+[![arXiv](https://img.shields.io/badge/arXiv-2405.16871-b31b1b.svg)](https://arxiv.org/abs/2405.16871) 
+
+MBGen models the multi-behavior sequential recommendation problem in a novel generative manner. 
+
+See our paper: [Multi-Behavior Generative Recommendation](https://arxiv.org/abs/2405.16871)
+
+## 🔍 Overview
+Multi-behavior sequential recommendation (MBSR) aims to incorporate behavior types of interactions for better recommendations. Existing approaches focus on the next-item prediction objective, neglecting the value of integrating the target behavior type into the learning objective. In this paper, we propose MBGen, a novel Multi-Behavior sequential Generative recommendation framework. We formulate the MBSR task into a consecutive two-step process: (1) given item sequences, MBGen first predicts the next behavior type to frame the user intention, (2) given item sequences and a target behavior type, MBGen then predicts the next items. To model such a two-step process, we tokenize both behaviors and items into tokens and construct one single token sequence with both behaviors and items placed interleaved. Furthermore, MBGen learns to autoregressively generate the next behavior and item tokens in a unified generative recommendation paradigm, naturally enabling a multi-task capability. Additionally, we exploit the heterogeneous nature of token sequences in the generative recommendation and propose a position-routed sparse architecture to efficiently and effectively scale up models. Extensive experiments on public datasets demonstrate that MBGen significantly outperforms existing MBSR models across multiple tasks.
+
+![image](assets/MBGen.png)
+
+## 🚀 Quick Start
 
 Download datasets from [here](https://drive.google.com/drive/folders/1G7tvIT1wvGZC2GmI-8Okbn9HrGQnNbfu?usp=sharing) and put the datasets into `./data/raw_dataset/`
 
@@ -13,4 +24,17 @@ python run.py --config=./config/main/retail/main.yaml
 To train the model with IJCAI dataset
 ```
 python run.py --config=./config/main/ijcai/main.yaml --dataset=ijcai
+```
+
+## 🌟 Acknowledgement
+
+Please cite the following paper if you find our code helpful.
+
+```bibtex
+@article{liu2024multibehavior,
+    title={Multi-Behavior Generative Recommendation},
+    author={Zihan Liu and Yupeng Hou and Julian McAuley},
+    year={2024},
+    journal={arXiv preprint arXiv:2405.16871},
+}
 ```
