@@ -1,0 +1,9 @@
+numpy
+scikit-learn
+torch
+transformers
+tqdm
+sentence-transformers
+datasets
+accelerate
+tensorboard
