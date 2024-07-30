@@ -1,7 +1,7 @@
 # MBGen
 [![arXiv](https://img.shields.io/badge/arXiv-2405.16871-b31b1b.svg)](https://arxiv.org/abs/2405.16871) 
 
-MBGen models the multi-behavior sequential recommendation problem in a novel generative manner. 
+MBGen models the multi-behavior sequential recommendation problem in a novel generative manner. Accepted to *CIKM 2024*.
 
 See our paper: [Multi-Behavior Generative Recommendation](https://arxiv.org/abs/2405.16871)
 
@@ -31,10 +31,10 @@ python run.py --config=./config/main/ijcai/main.yaml --dataset=ijcai
 Please cite the following paper if you find our code helpful.
 
 ```bibtex
-@article{liu2024multibehavior,
-    title={Multi-Behavior Generative Recommendation},
-    author={Zihan Liu and Yupeng Hou and Julian McAuley},
-    year={2024},
-    journal={arXiv preprint arXiv:2405.16871},
+@inproceedings{liu2024mbgen,
+  title={Multi-Behavior Generative Recommendation},
+  author={Zihan Liu and Yupeng Hou and Julian McAuley},
+  booktitle={{CIKM}},
+  year={2024}
 }
 ```
