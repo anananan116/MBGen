@@ -12,16 +12,16 @@ item_len: 3
 max_seq_len: 202
 min_seq_len: 1
 behavior_tokens: [1,2,3,4]
-id_offsets: [0, 5, 101, 197, 453]
+id_offsets: [0, 5, 69, 133, 261]
 BOS_token: 0
 num_user_tokens: 2000
 expand_id2: False
-num_id2: 96
+num_id2: 64
 
 RQVAE:
   standardize: True
   batch_size: 2048
-  epochs: 300
+  epochs: 1000
   lr: 0.001
   beta: 0.05
   input_dim: 256
@@ -33,10 +33,10 @@ RQVAE:
   latent_dim: 32
   num_layers: 1
   dropout: 0.0
-  code_book_size: 96
+  code_book_size: 64
   max_seq_len: 256
   val_ratio: 0.01
-  save_name: rqvae_id_ijcai
+  save_name: rqvae_id_retail
   save_residual: True
   
 
@@ -66,9 +66,9 @@ feed_forward_proj: "relu"
 n_positions: 50
 
 #trainer:
-exp_id: "main_ijcai"
+exp_id: "SID_retail"
 steps: 350000
-lr: 0.0012
+lr: 0.001
 warmup_steps: 15000
 weight_decay: 0.005
 batch_size: 512
@@ -76,7 +76,7 @@ eval_batch_size: 32
 patience: 10
 auto_save_epochs: 5
 epochs_per_eval: 1
-epochs_per_all_eval: 1
+epochs_per_all_eval: 2
 decoder_input: [0,1]
     
     

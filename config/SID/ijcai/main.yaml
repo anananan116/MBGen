@@ -1,0 +1,82 @@
+# dataset config : Sequential Recommendation
+data_path: ./data/processed
+
+format: sequential
+target: True
+behavior: True
+item_augmented: False
+seq_augmented: False
+
+tokenizer_type: QAE_Kmeans
+item_len: 3
+max_seq_len: 202
+min_seq_len: 1
+behavior_tokens: [1,2,3,4]
+id_offsets: [0, 5, 101, 197, 453]
+BOS_token: 0
+num_user_tokens: 2000
+expand_id2: False
+num_id2: 96
+
+RQVAE:
+  standardize: True
+  batch_size: 2048
+  epochs: 300
+  lr: 0.001
+  beta: 0.05
+  input_dim: 256
+  hidden_dim:
+    - 2048
+    - 1024
+    - 512
+    - 256
+  latent_dim: 32
+  num_layers: 1
+  dropout: 0.0
+  code_book_size: 96
+  max_seq_len: 256
+  val_ratio: 0.01
+  save_name: rqvae_id_ijcai
+  save_residual: True
+  
+
+# TIGER:
+
+# T5:
+T5_type: "PBA"
+behavior_injection: True
+behavior_embedding_dim: 64
+num_positions: 4
+num_behavior: 4
+num_layers: 4
+num_decoder_layers: 4
+num_sparse_encoder_layers: 4
+num_sparse_decoder_layers: 4
+sparse_layers_encoder: []
+sparse_layers_decoder: [0, 1, 2, 3]
+behavior_injection_encoder: [0, 1]
+behavior_injection_decoder: [0, 1]
+d_model: 256
+d_ff: 512
+num_heads: 6
+d_kv: 64
+dropout_rate: 0.0
+activation_function: "relu"
+feed_forward_proj: "relu"
+n_positions: 50
+
+#trainer:
+exp_id: "SID_ijcai"
+steps: 350000
+lr: 0.0012
+warmup_steps: 15000
+weight_decay: 0.005
+batch_size: 512
+eval_batch_size: 32
+patience: 10
+auto_save_epochs: 5
+epochs_per_eval: 1
+epochs_per_all_eval: 1
+decoder_input: [0,1]
+    
+    
